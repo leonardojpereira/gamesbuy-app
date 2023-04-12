@@ -1,0 +1,50 @@
+.HeaderContainer {
+    display: flex;
+    padding: 22px;
+    justify-content: space-between;
+    align-items: center;
+    background: #3b3b3b;
+}
+
+.Logo {
+    font-size: 26px;
+    color: #FFF;
+}
+
+.UlContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ItemList {
+    list-style: none;
+    margin: 0 18px;
+    color: #FFF;
+    display: flex;
+    cursor: pointer;
+}
+
+.WishListIcon {
+    color: red;
+    margin-right: 6px;
+}
+
+.CarIcon {
+    color: yellow;
+    margin-right: 6px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 5px;
+    text-align: center;
+    margin-left: 6px;
+    font-size: 14px;
+}
