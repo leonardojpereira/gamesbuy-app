@@ -21,21 +21,45 @@
     border-radius: 5px;
     list-style: none;
     background-color: #38B6FF;
+
   }
   
   .GameBanner {
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 75px);
     object-fit: cover;
     z-index: 1;
-
   }
   
+  .GameInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    align-items: center;
+  }
+
   .GameTitle {
     display: block;
-    margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
     color: #FFF;
     text-transform: capitalize;
   }
+
+  .GameButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 22px;
+    gap: 12px;
+  }
+
+  .WishListBtn{
+    color: yellow;
+  }
+
+  .CartBtn {
+    color: green;
+  }
+

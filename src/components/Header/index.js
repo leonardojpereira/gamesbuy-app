@@ -1,5 +1,5 @@
 import { FaShoppingCart } from "react-icons/fa";
-import { AiFillHeart } from "react-icons/ai";
+import { TbJewishStarFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import LogoImg from '../../assets/image/logo.png';
 import "./style.css";
@@ -17,7 +17,7 @@ export default function Header() {
           <Link to='/wishlist' style={{textDecoration: 'none'}}>
             <li className="ItemList">
               <span className="WishListIcon">
-                <AiFillHeart />
+                <TbJewishStarFilled />
               </span>{" "}
               Lista de Desejos
               <span className="counter">1</span>
