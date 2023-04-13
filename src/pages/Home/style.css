@@ -1,0 +1,41 @@
+.HomeContainer {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .Box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .GameContainer {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    background-color: #38B6FF;
+  }
+  
+  .GameBanner {
+    width: 100%;
+    height: calc(100% - 50px);
+    object-fit: cover;
+    z-index: 1;
+
+  }
+  
+  .GameTitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: capitalize;
+  }

@@ -1,6 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import LogoImg from '../../assets/image/logo.png';
 import "./style.css";
 
 export default function Header() {
@@ -8,7 +9,7 @@ export default function Header() {
     <header className="HeaderContainer">
         <Link to='/' style={{textDecoration: 'none'}}>
         <div className="LogoContainer">
-        <span className="Logo">GamesBuy</span>
+        <img src={LogoImg} className="Logo" alt="Logo"/>
       </div>
         </Link>
       <nav className="NavContainer">
