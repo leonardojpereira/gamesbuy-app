@@ -23,10 +23,12 @@
     background-color: #38B6FF;
 
   }
+
+  
   
   .GameBanner {
     width: 100%;
-    height: calc(100% - 75px);
+    height: calc(100% - 60px);
     object-fit: cover;
     z-index: 1;
   }
@@ -36,6 +38,7 @@
     justify-content: space-between;
     padding: 0 16px;
     align-items: center;
+    min-height: 55px;
   }
 
   .GameTitle {
@@ -44,19 +47,18 @@
     font-weight: bold;
     color: #FFF;
     text-transform: capitalize;
+    width: 100%;
   }
 
-  .GameButtons {
+
+  .WishListBtn{
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     font-size: 22px;
-    gap: 12px;
-  }
-
-  .WishListBtn{
     color: yellow;
+    cursor: pointer;
   }
 
   .CartBtn {

@@ -1,5 +1,4 @@
-import { FaShoppingCart } from "react-icons/fa";
-import { TbJewishStarFilled } from "react-icons/tb";
+import { BsStarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import LogoImg from '../../assets/image/logo.png';
 import "./style.css";
@@ -17,19 +16,10 @@ export default function Header() {
           <Link to='/wishlist' style={{textDecoration: 'none'}}>
             <li className="ItemList">
               <span className="WishListIcon">
-                <TbJewishStarFilled />
+                <BsStarFill />
               </span>{" "}
               Lista de Desejos
               <span className="counter">1</span>
-            </li>
-          </Link>
-          <Link to='/cart' style={{textDecoration: 'none'}}>
-            <li className="ItemList">
-              <span className="CarIcon">
-                <FaShoppingCart />
-              </span>{" "}
-              Meu carrinho
-              <span className="counter">0</span>
             </li>
           </Link>
         </ul>
