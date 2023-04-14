@@ -12,7 +12,7 @@ export default function RoutesApp() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/wishlist" element={<WishList/>}/>
-                <Route path="/description" element={<GameDescription/>}/>
+                <Route path="/description/:id" element={<GameDescription/>}/>
             </Routes>
         </BrowserRouter>
     )

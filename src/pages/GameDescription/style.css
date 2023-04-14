@@ -1,0 +1,49 @@
+.DescriptionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: #001622;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .GameImageContainer {
+    width: 50%;
+    margin-right: 40px;
+  }
+  
+  .GameImage {
+    width: 100%;
+    object-fit: cover;
+    min-height: 500px;
+    border-radius: 8px;
+  }
+  
+  .GameDescriptionContainer {
+    width: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    color: #FFF;
+
+  }
+  
+  .GameTitle {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+  
+  .GameInfo {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .Released,
+  .CriticScore {
+    margin-bottom: 10px;
+  }

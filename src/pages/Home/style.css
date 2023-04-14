@@ -24,8 +24,6 @@
 
   }
 
-  
-  
   .GameBanner {
     width: 100%;
     height: calc(100% - 60px);
@@ -41,7 +39,7 @@
     min-height: 55px;
   }
 
-  .GameTitle {
+  .GameName {
     display: block;
     font-size: 18px;
     font-weight: bold;

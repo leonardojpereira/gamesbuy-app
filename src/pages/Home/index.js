@@ -30,13 +30,12 @@ export default function Home() {
                     <li id={game.id} key={game.id} className='GameContainer'>
                         <img className='GameBanner' src={game.background_image} alt={game.slug} />
                             <div className='GameInfoContainer'>
-                            <Link to='/description' style={{ textDecoration: 'none' }}>
-                                <span className='GameTitle'>{formatGameTitle(game.slug)}</span>
+                            <Link to={`/description/${game.id}`} style={{ textDecoration: 'none' }}>
+                                <span className='GameName'>{formatGameTitle(game.slug)}</span>
                                 </Link>
                                     <span className='WishListBtn'><FiStar/></span>
                             </div>
          
-
 
                     </li>
                 ))}
