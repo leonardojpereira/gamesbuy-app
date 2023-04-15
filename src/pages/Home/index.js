@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import api from "../../services/api";
-import './style.css';
 import { FiStar } from "react-icons/fi";
+import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { FiSearch } from 'react-icons/fi';
-import { MdCancel } from 'react-icons/md';
+import { LoadingMessage, HomeContainer, Title, SearchForm, SearchInput, Box, NoGamesMessage, GameContainer, GameBanner, GameInfoContainer, GameName, WishListBtn } from './styled';
 
 export default function Home() {
   const [games, setGames] = useState([]);
@@ -27,70 +26,65 @@ export default function Home() {
     setFilteredGames(games);
   }, [games]);
 
-  function formatGameTitle(title) {
-    return title.replace(/-/g, ' ');
-  }
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
+  useEffect(() => {
     const filtered = games.filter((game) => {
       return game.slug.toLowerCase().includes(searchGame.toLowerCase());
     });
     setFilteredGames(filtered);
-  };
-    
-  const handleSearchChange = (event) => {
-    setSearchGame(event.target.value);
-  };
+  }, [searchGame, games]);
 
-  const handleClearSearch = () => {
-    setSearchGame('');
-    setFilteredGames(games);
-  };
-
-  if (!loading) {
-    return <p className='LoadingMessage'>Carregando...</p>;
+  function formatGameTitle(title) {
+    return title.replace(/-/g, ' ');
   }
 
+  const handleWishlistClick = (gameId) => {
+    setGames(games.map(game => {
+      if (game.id === gameId) {
+        return {
+          ...game,
+          wishlist: !game.wishlist // Altera o estado da estrela
+        }
+      }
+      return game;
+    }));
+  }
+
+  if (!loading) {
+    return <LoadingMessage>Carregando...</LoadingMessage>;
+  }
+
+
+
   return (
-    <div className="HomeContainer">
-    <h1>Seu guia completo de jogos e informações detalhadas!</h1>
-    <form onSubmit={handleSearchSubmit} className="SearchForm">
-      <input
+    <HomeContainer>
+    <Title>Seu guia completo de jogos e informações detalhadas!</Title>
+    <SearchForm>
+      <SearchInput
         type="search"
         placeholder="Pesquisar jogos..."
         value={searchGame}
-        onChange={handleSearchChange}
-        className="SearchInput"
+        onChange={(e) => {setSearchGame(e.target.value)}}
       />
-      <button type="submit" className="SearchButton">
-        <FiSearch />
-      </button>
-      {searchGame.length > 0 && (
-        <button type="button" className="ClearSearchButton" onClick={handleClearSearch}>
-          <MdCancel/>
-        </button>
-      )}
-    </form>
-    <div className="Box">
+    </SearchForm>
+    <Box>
       {filteredGames.length === 0 ? (
-        <div className="NoGamesMessage">Nenhum jogo encontrado :(</div>
+        <NoGamesMessage>Nenhum jogo encontrado :(</NoGamesMessage>
       ) : (
         filteredGames.map((game) => (
-          <li key={game.id} className="GameContainer">
-            <img className="GameBanner" src={game.background_image} alt={game.slug} />
-            <div className="GameInfoContainer">
+          <GameContainer key={game.id}>
+            <GameBanner src={game.background_image} alt={game.slug} />
+            <GameInfoContainer>
               <Link to={`/description/${game.id}`} style={{ textDecoration: 'none' }}>
-                <span className="GameName">{formatGameTitle(game.slug)}</span>
+                <GameName>{formatGameTitle(game.slug)}</GameName>
               </Link>
-              <span className="WishListBtn">
-                <FiStar />
-              </span>
-            </div>
-          </li>
+              <WishListBtn onClick={() => handleWishlistClick(game.id)}>
+              {game.wishlist ? <AiFillStar /> : <FiStar />}
+              </WishListBtn>
+            </GameInfoContainer>
+          </GameContainer>
         ))
       )}
-    </div>
-  </div>
+    </Box>
+  </HomeContainer>
   )
 }

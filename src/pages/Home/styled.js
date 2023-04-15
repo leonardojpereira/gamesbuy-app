@@ -1,9 +1,11 @@
-.HomeContainer {
-    text-align: center;
-  }
-  
-  h1 {
-    font-family: 'Helvetica Neue', sans-serif;
+import styled from 'styled-components';
+
+export const HomeContainer = styled.div`
+     text-align: center;
+`;
+
+export const Title = styled.h1`
+  font-family: 'Helvetica Neue', sans-serif;
     font-size: 3rem;
     font-weight: bold;
     color: #fff;
@@ -12,94 +14,60 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 1rem;
-  }
+`;
 
-  .SearchForm {
+export const SearchForm = styled.form`
     display: flex;
     justify-content: center;
     max-width: 700px;
     height: 60px;
     margin: 2rem auto;
-  }
-  
-  .SearchInput {
-    padding: 0 8px;
+`;
+
+export const SearchInput = styled.input`
+  padding: 0 8px;
     border: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     font-size: 1rem;
     width: 100%;
     outline: none;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  
-  .SearchButton {
-    background-color: #38B6FF;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 40px;
-    transition: background-color 0.2s;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    font-size: 22px;
-  }
-  
-  .SearchButton:hover {
-    background-color: #2c90c9;
-  }
+    border-radius: 8px;
+`;
 
-  .ClearSearchButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: none;
-    font-size: 40px;
-    color: red;
-    cursor: pointer;
-  }
-
-  .Box {
-    display: flex;
+export const Box = styled.div`
+display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+`;
 
-  .NoGamesMessage {
-    font-size: 32px;
+export const NoGamesMessage = styled.div`
+  font-size: 32px;
     color: #fff;
     font-style: italic;
-  }
-  
-  .GameContainer {
-    margin: 10px;
+`;
+
+export const GameContainer = styled.li`
+  margin: 10px;
     max-width: 500px;
     list-style: none;
     text-decoration: none;
+    @media (max-width: 768px) {
+        width: 100%;
   }
-  
-  @media (max-width: 768px) {
-    .GameContainer {
-      width: 100%;
-    }
-  }
+`;
 
-  .GameBanner {
-    width: 100%;
+export const GameBanner = styled.img`
+   width: 100%;
     height: calc(100% - 60px);
     object-fit: cover;
     z-index: 1;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     display: block;
-  }
-  
-  .GameInfoContainer {
-    display: flex;
+`;
+
+export const GameInfoContainer = styled.div`
+  display: flex;
     justify-content: space-between;
     padding: 0 16px;
     align-items: center;
@@ -107,36 +75,31 @@
     background-color: #38B6FF;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-  }
+`;
 
-  .GameName {
-    display: block;
+export const GameName = styled.span`
+  display: block;
     font-size: 18px;
     font-weight: bold;
     color: #FFF;
     text-transform: capitalize;
     width: 100%;
-  }
+`;
 
-
-  .WishListBtn{
-    display: flex;
+export const WishListBtn = styled.span`
+ display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     font-size: 22px;
     color: yellow;
     cursor: pointer;
-  }
+`;
 
-  .CartBtn {
-    color: green;
-  }
-
-.LoadingMessage {
+export const LoadingMessage = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
   color: #FFF;
-}
+`;

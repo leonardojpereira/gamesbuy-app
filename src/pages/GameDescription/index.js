@@ -1,44 +1,52 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../services/api';
-import './style.css';
+import { FaGlobe } from 'react-icons/fa'
+import { BsReddit } from 'react-icons/bs'
+import { Container, Title, LoadingMessage, DescriptionContainer, GameImageContainer, GameImage, GameDescriptionContainer, GameTitle, GameInfo, Released, CriticScore, GameWebsite, GameReddit } from './styled';
 
 function GameDescription() {
-  const [game, setGame] = useState(null);
+  const [game, setGame] = useState([]);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadGameDescription() {
-        const response = await api.get(`https://api.rawg.io/api/games/${id}?key=5531c0208c3045cb9a7f4b4b1e8c0231&language=pt`, {
-          params: {
-            description: true
-          }
-        });
-        const data = response.data;
-        setGame(data);
-        setLoading(true);
-      }
+      const response = await api.get(`https://api.rawg.io/api/games/${id}?key=5531c0208c3045cb9a7f4b4b1e8c0231&language=pt`, {
+        params: {
+          description: true
+        }
+      });
+      const data = response.data;
+      setGame(data);
+      setLoading(true);
+
+    }
 
     loadGameDescription();
-  }, []);
+  }, [id]);
 
   if (!loading) {
-    return <p className='LoadingMessage'>Carregando...</p>;
+    return <LoadingMessage>Carregando...</LoadingMessage>;
   }
 
   return (
-    <div className="DescriptionContainer">
-    <div className="GameImageContainer">
-      <img className="GameImage" src={game.background_image} alt={game.slug} />
-    </div>
-    <div className="GameDescriptionContainer">
-      <h1 className="GameTitle">{game.name}</h1>
-      <p className="GameInfo">{game.description_raw}</p>
-      <p className="Released">Released: {game.released}</p>
-      <p className="CriticScore">Metacritic Score: {game.metacritic}</p>
-    </div>
-  </div>
+    <Container>
+      <Title>Informações sobre o jogo</Title>
+    <DescriptionContainer>
+      <GameImageContainer>
+        <GameImage src={game.background_image} alt={game.slug} />
+      </GameImageContainer>
+      <GameDescriptionContainer>
+        <GameTitle>{game.name}</GameTitle>
+        <GameInfo>{game.description_raw}</GameInfo>
+        <Released>Released: {game.released}</Released>
+        <CriticScore>Rating: {game.rating}</CriticScore>
+        <GameWebsite target='blank' href={game.website}>Website <FaGlobe size={18} style={{ marginLeft: '6px' }} /></GameWebsite>
+        <GameReddit target='blank' href={game.reddit_url}>Reddit <BsReddit size={18} style={{ marginLeft: '6px' }} /></GameReddit>
+      </GameDescriptionContainer>
+    </DescriptionContainer>
+    </Container>
   );
 }
 
