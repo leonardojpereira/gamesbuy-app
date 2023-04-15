@@ -6,6 +6,7 @@ import './style.css';
 function GameDescription() {
   const [game, setGame] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadGameDescription() {
@@ -16,14 +17,14 @@ function GameDescription() {
         });
         const data = response.data;
         setGame(data);
-        console.log(data);
+        setLoading(true);
       }
 
     loadGameDescription();
   }, []);
 
-  if (!game) {
-    return <p>Loading...</p>;
+  if (!loading) {
+    return <p className='LoadingMessage'>Carregando...</p>;
   }
 
   return (

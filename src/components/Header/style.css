@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background: #001622;
+    border-bottom: #38B6FF solid 2px;
 }
 
 .LogoContainer {
