@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import WishList from './pages/WishList';
 import GameDescription from './pages/GameDescription';
+import Error from './pages/Error';
 
 export default function RoutesApp() {
     return (
@@ -13,6 +14,8 @@ export default function RoutesApp() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/wishlist" element={<WishList/>}/>
                 <Route path="/description/:id" element={<GameDescription/>}/>
+
+                <Route path="*" element={<Error/>}/>
             </Routes>
         </BrowserRouter>
     )

@@ -79,10 +79,3 @@ export const GameReddit = styled.a`
 
 `;
 
-export const LoadingMessage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #fff;
-`;
