@@ -1,10 +1,12 @@
 import RoutesApp from "./routes";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <>
-      <RoutesApp/>
-    </>
+    <Provider store={store}>
+      <RoutesApp />
+    </Provider>
   );
 }
 

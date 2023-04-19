@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux";
 import { BsStarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import LogoImg from '../../assets/image/logo.png';
 import "./style.css";
 
 export default function Header() {
+
+  const wishListAmount = useSelector(state => state.wishlist.length);
+
   return (
     <header className="HeaderContainer">
         <Link to='/' style={{textDecoration: 'none'}}>
@@ -19,7 +23,7 @@ export default function Header() {
                 <BsStarFill />
               </span>{" "}
               Lista de Desejos
-              <span className="counter">1</span>
+              <span className="counter">{wishListAmount}</span>
             </li>
           </Link>
         </ul>
