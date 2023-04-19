@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-=======
-import { useState, useEffect } from "react";
->>>>>>> f99542725892838c5201b8ec2415e76c24ba33ff
 import api from "../../services/api";
 import { FiStar } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
@@ -53,32 +49,12 @@ export default function Home() {
     setFilteredGames(filtered);
   }, [searchGame, games]);
 
-<<<<<<< HEAD
   const handleWishlistClick = (game) => {
     dispatch({
       type: 'ADD_GAME_TO_WISHLIST',
       game
     });
   }
-=======
-  function formatGameTitle(title) {
-    return title.replace(/-/g, " ");
-  }
-
-  const handleWishlistClick = (gameId) => {
-    setGames(
-      games.map((game) => {
-        if (game.id === gameId) {
-          return {
-            ...game,
-            wishlist: !game.wishlist, // Altera o estado da estrela
-          };
-        }
-        return game;
-      })
-    );
-  };
->>>>>>> f99542725892838c5201b8ec2415e76c24ba33ff
 
   if (!loading) {
     return <Loading>Carregando...</Loading>;
@@ -86,7 +62,6 @@ export default function Home() {
 
   return (
     <HomeContainer>
-<<<<<<< HEAD
     <Title>Seu guia completo de jogos e informações detalhadas!</Title>
     <SearchForm>
       <SearchInput
@@ -118,41 +93,3 @@ export default function Home() {
   </HomeContainer>
   )
 }
-=======
-      <Title>Seu guia completo de jogos e informações detalhadas!</Title>
-      <SearchForm>
-        <SearchInput
-          type="search"
-          placeholder="Pesquisar jogos..."
-          value={searchGame}
-          onChange={(e) => {
-            setSearchGame(e.target.value);
-          }}
-        />
-      </SearchForm>
-      <Box>
-        {filteredGames.length === 0 ? (
-          <NoGamesMessage>Nenhum jogo encontrado :(</NoGamesMessage>
-        ) : (
-          filteredGames.map((game) => (
-            <GameContainer key={game.id}>
-              <GameBanner src={game.background_image} alt={game.slug} />
-              <GameInfoContainer>
-                <Link
-                  to={`/description/${game.id}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  <GameName>{formatGameTitle(game.slug)}</GameName>
-                </Link>
-                <WishListBtn onClick={() => handleWishlistClick(game.id)}>
-                  {game.wishlist ? <AiFillStar /> : <FiStar />}
-                </WishListBtn>
-              </GameInfoContainer>
-            </GameContainer>
-          ))
-        )}
-      </Box>
-    </HomeContainer>
-  );
-}
->>>>>>> f99542725892838c5201b8ec2415e76c24ba33ff

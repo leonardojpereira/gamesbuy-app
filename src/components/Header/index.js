@@ -32,13 +32,8 @@ export default function Header() {
                 <BsStarFill />
               </WishListIcon>{" "}
               Lista de Desejos
-<<<<<<< HEAD
-              <span className="counter">{wishListAmount}</span>
-            </li>
-=======
-              <Counter>1</Counter>
+              <Counter>{wishListAmount}</Counter>
             </ItemList>
->>>>>>> f99542725892838c5201b8ec2415e76c24ba33ff
           </Link>
         </UlContainer>
       </NavContainer>
