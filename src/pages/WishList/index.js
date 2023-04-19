@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from 'react-icons/md';
-import './style.css';
+import './style.js';
 import { Link } from "react-router-dom";
+import { Title, Container, NoGameContainer, NoGameMessage, BtnGames, GameContainer, GameImage, GameInfo, GameName, GameInfoBtn, DeleteGameBtn } from './style';
 
 export default function WishList() {
     const dispatch = useDispatch();
@@ -15,31 +16,34 @@ export default function WishList() {
     }
 
     return (
-       <>
-            <h1 className="Title">Sua lista de desejos</h1>
-            {games.map(game => (
-                <div className="Container" key={game.id}>
-                    <div className="GameContainer" key={game.id}>
-                        <img className="GameImage"
-                            src={game.background_image}
-                            alt={game.slug}
-                        />
-                        <div className="GameInfo">
-                            <strong className="GameName">{game.name}</strong>
-                            <Link to={`/description/${game.id}`}>
-                            <button className="GameInfoBtn">Informações sobre o jogo</button>
-                            </Link>
-                            
-                            <button className="DeleteGameBtn"
-                                type="button"
-                                onClick={() => handleRemove(game.id)}
-                            >
-                                <MdDelete size={32} color="#fff" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            ))}
+        <>
+          <Title>Lista de desejos</Title>
+          {games.length === 0 ? (
+            <NoGameContainer>
+                <NoGameMessage>Sua lista de desejo está vazia :/</NoGameMessage>
+                <Link to='/'><BtnGames>Ver jogos</BtnGames></Link>
+            </NoGameContainer>
+          ) : (
+            games.map((game) => (
+                <Container key={game.id}>
+                  <GameContainer key={game.id}>
+                    <GameImage src={game.background_image} alt={game.slug} />
+                    <GameInfo>
+                      <GameName>{game.name}</GameName>
+                      <Link to={`/description/${game.id}`}>
+                        <GameInfoBtn>Informações sobre o jogo</GameInfoBtn>
+                      </Link>
+                      <DeleteGameBtn
+                        type="button"
+                        onClick={() => handleRemove(game.id)}
+                      >
+                        <MdDelete size={20} color="red" />
+                      </DeleteGameBtn>
+                    </GameInfo>
+                  </GameContainer>
+                </Container>
+              ))
+          )}
         </>
-    )
+      );
 }

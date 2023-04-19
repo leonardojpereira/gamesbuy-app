@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import api from "../../services/api";
 import { FiStar } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
+
 import {
   HomeContainer,
   Title,
@@ -25,6 +26,8 @@ export default function Home() {
   const [searchGame, setSearchGame] = useState("");
   const [filteredGames, setFilteredGames] = useState(games);
   const [loading, setLoading] = useState(false);
+
+  const wishlist = useSelector((state) => state.wishlist);
 
   useEffect(() => {
     async function loadGames() {
@@ -50,11 +53,19 @@ export default function Home() {
   }, [searchGame, games]);
 
   const handleWishlistClick = (game) => {
-    dispatch({
-      type: 'ADD_GAME_TO_WISHLIST',
-      game
-    });
-  }
+    const gameIndex = wishlist.findIndex((item) => item.id === game.id);
+    if (gameIndex !== -1) {
+      dispatch({
+        type: "REMOVE_GAME_FROM_WISHLIST",
+        id: game.id,
+      });
+    } else {
+      dispatch({
+        type: "ADD_GAME_TO_WISHLIST",
+        game,
+      });
+    }
+  };
 
   if (!loading) {
     return <Loading>Carregando...</Loading>;
@@ -62,34 +73,43 @@ export default function Home() {
 
   return (
     <HomeContainer>
-    <Title>Seu guia completo de jogos e informações detalhadas!</Title>
-    <SearchForm>
-      <SearchInput
-        type="search"
-        placeholder="Pesquisar jogos..."
-        value={searchGame}
-        onChange={(e) => {setSearchGame(e.target.value)}}
-      />
-    </SearchForm>
-    <Box>
-      {filteredGames.length === 0 ? (
-        <NoGamesMessage>Nenhum jogo encontrado :(</NoGamesMessage>
-      ) : (
-        filteredGames.map((game) => (
-          <GameContainer key={game.id}>
-            <GameBanner src={game.background_image} alt={game.name} />
-            <GameInfoContainer>
-              <Link to={`/description/${game.id}`} style={{ textDecoration: 'none' }}>
-                <GameName>{game.name}</GameName>
-              </Link>
-              <WishListBtn onClick={() => handleWishlistClick(game)}>
-              {game.wishlist ? <AiFillStar /> : <FiStar />}
-              </WishListBtn>
-            </GameInfoContainer>
-          </GameContainer>
-        ))
-      )}
-    </Box>
-  </HomeContainer>
-  )
+      <Title>Seu guia completo de jogos e informações detalhadas!</Title>
+      <SearchForm>
+        <SearchInput
+          type="search"
+          placeholder="Pesquisar jogos..."
+          value={searchGame}
+          onChange={(e) => {
+            setSearchGame(e.target.value);
+          }}
+        />
+      </SearchForm>
+      <Box>
+        {filteredGames.length === 0 ? (
+          <NoGamesMessage>Nenhum jogo encontrado :(</NoGamesMessage>
+        ) : (
+          filteredGames.map((game) => (
+            <GameContainer key={game.id}>
+              <GameBanner src={game.background_image} alt={game.name} />
+              <GameInfoContainer>
+                <Link
+                  to={`/description/${game.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <GameName>{game.name}</GameName>
+                </Link>
+                <WishListBtn onClick={() => handleWishlistClick(game)}>
+                  {wishlist.some((item) => item.id === game.id) ? (
+                    <AiFillStar />
+                  ) : (
+                    <FiStar />
+                  )}
+                </WishListBtn>
+              </GameInfoContainer>
+            </GameContainer>
+          ))
+        )}
+      </Box>
+    </HomeContainer>
+  );
 }

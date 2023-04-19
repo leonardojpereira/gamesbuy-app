@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { BsStarFill } from "react-icons/bs";
+import { RiFileList3Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import LogoImg from "../../assets/image/logo.png";
 import {
@@ -29,9 +29,8 @@ export default function Header() {
           <Link to="/wishlist" style={{ textDecoration: "none" }}>
             <ItemList>
               <WishListIcon>
-                <BsStarFill />
-              </WishListIcon>{" "}
-              Lista de Desejos
+                <RiFileList3Fill size={48} color="yellow"/>
+              </WishListIcon>
               <Counter>{wishListAmount}</Counter>
             </ItemList>
           </Link>

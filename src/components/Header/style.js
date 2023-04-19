@@ -32,28 +32,32 @@ export const UlContainer = styled.ul`
 `;
 
 export const ItemList = styled.li`
+  display: flex;
+  align-items: center;
   list-style: none;
   margin: 0 18px;
   color: #fff;
   display: flex;
   cursor: pointer;
+
 `;
 
 export const WishListIcon = styled.span`
-  color: yellow;
   margin-right: 6px;
+  position: relative;
 `;
 
 export const Counter = styled.span`
+  background-color: #38b6ff;
+  border-radius: 50%;
+  font-size: 11px;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
-  height: 18px;
-  background-color: #38b6ff;
-  border-radius: 50%;
-  margin-right: 5px;
-  text-align: center;
-  margin-left: 6px;
-  font-size: 14px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 48px;
+  right: 48px;
 `;

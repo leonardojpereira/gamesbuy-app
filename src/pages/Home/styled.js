@@ -46,24 +46,27 @@ export const NoGamesMessage = styled.div`
     font-style: italic;
 `;
 
-export const GameContainer = styled.li`
-  margin: 10px;
-    max-width: 500px;
-    list-style: none;
-    text-decoration: none;
-    @media (max-width: 768px) {
-        width: 100%;
-  }
+export const GameBanner = styled.img`
+  width: 100%;
+  height: calc(100% - 60px);
+  object-fit: cover;
+  z-index: 1;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
 `;
 
-export const GameBanner = styled.img`
-   width: 100%;
-    height: calc(100% - 60px);
-    object-fit: cover;
-    z-index: 1;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-    display: block;
+export const GameContainer = styled.li`
+  margin: 10px;
+  max-width: 500px;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  
+  &:hover ${GameBanner} {
+    opacity: 0.5;
+  }
 `;
 
 export const GameInfoContainer = styled.div`
