@@ -1,33 +1,47 @@
 import { useSelector } from "react-redux";
 import { BsStarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import LogoImg from '../../assets/image/logo.png';
-import "./style.css";
+import LogoImg from "../../assets/image/logo.png";
+import {
+  HeaderContainer,
+  LogoContainer,
+  LogoImage,
+  NavContainer,
+  UlContainer,
+  ItemList,
+  WishListIcon,
+  Counter,
+} from "./style";
 
 export default function Header() {
 
   const wishListAmount = useSelector(state => state.wishlist.length);
 
   return (
-    <header className="HeaderContainer">
-        <Link to='/' style={{textDecoration: 'none'}}>
-        <div className="LogoContainer">
-        <img src={LogoImg} className="Logo" alt="Logo"/>
-      </div>
-        </Link>
-      <nav className="NavContainer">
-        <ul className="UlContainer">
-          <Link to='/wishlist' style={{textDecoration: 'none'}}>
-            <li className="ItemList">
-              <span className="WishListIcon">
+    <HeaderContainer>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <LogoContainer>
+          <LogoImage src={LogoImg} alt="Logo" />
+        </LogoContainer>
+      </Link>
+      <NavContainer>
+        <UlContainer>
+          <Link to="/wishlist" style={{ textDecoration: "none" }}>
+            <ItemList>
+              <WishListIcon>
                 <BsStarFill />
-              </span>{" "}
+              </WishListIcon>{" "}
               Lista de Desejos
+<<<<<<< HEAD
               <span className="counter">{wishListAmount}</span>
             </li>
+=======
+              <Counter>1</Counter>
+            </ItemList>
+>>>>>>> f99542725892838c5201b8ec2415e76c24ba33ff
           </Link>
-        </ul>
-      </nav>
-    </header>
+        </UlContainer>
+      </NavContainer>
+    </HeaderContainer>
   );
 }
