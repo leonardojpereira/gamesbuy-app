@@ -14,7 +14,9 @@ import {
   Box,
   NoGamesMessage,
   GameContainer,
+  GameBannerContainer,
   GameBanner,
+  GameTextOverlay,
   GameInfoContainer,
   GameName,
   WishListBtn,
@@ -90,7 +92,12 @@ export default function Home() {
         ) : (
           filteredGames.map((game) => (
             <GameContainer key={game.id}>
+              <Link to={`/description/${game.id}`} style={{ textDecoration: "none" }}>
+              <GameBannerContainer>
               <GameBanner src={game.background_image} alt={game.name} />
+              <GameTextOverlay>Ver descrição</GameTextOverlay>
+              </GameBannerContainer>
+              </Link>
               <GameInfoContainer>
                 <Link
                   to={`/description/${game.id}`}

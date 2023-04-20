@@ -35,7 +35,7 @@ export const SearchInput = styled.input`
 `;
 
 export const Box = styled.div`
-display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 `;
@@ -46,26 +46,53 @@ export const NoGamesMessage = styled.div`
     font-style: italic;
 `;
 
-export const GameBanner = styled.img`
-  width: 100%;
-  height: calc(100% - 60px);
-  object-fit: cover;
-  z-index: 1;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  display: block;
-  transition: opacity 0.3s ease-in-out;
-`;
-
 export const GameContainer = styled.li`
   margin: 10px;
   max-width: 500px;
   list-style: none;
   text-decoration: none;
   position: relative;
-  
+`;
+
+export const GameBanner = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  display: block;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(40%);
+  }
+`;
+
+export const GameTextOverlay = styled.span`
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  display: none;
+  cursor: pointer;
+`;
+
+export const GameBannerContainer = styled.div`
+  height: calc(100% - 60px);
+  position: relative;
   &:hover ${GameBanner} {
-    opacity: 0.5;
+    filter: brightness(40%);
+  }
+  &:hover ${GameTextOverlay} {
+    display: block;
+    opacity: 1;
   }
 `;
 
@@ -97,12 +124,4 @@ export const WishListBtn = styled.span`
     font-size: 22px;
     color: yellow;
     cursor: pointer;
-`;
-
-export const LoadingMessage = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #FFF;
 `;
