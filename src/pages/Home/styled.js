@@ -4,17 +4,6 @@ export const HomeContainer = styled.div`
      text-align: center;
 `;
 
-export const Title = styled.h1`
-  font-family: 'Helvetica Neue', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    background-image: linear-gradient(to right, #2b6cff, #77d9ffd1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 1rem;
-`;
 
 export const SearchForm = styled.form`
     display: flex;
@@ -70,7 +59,7 @@ export const GameBanner = styled.img`
 `;
 
 export const GameTextOverlay = styled.span`
-  font-size: 16px;
+  font-size: 18px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -92,7 +81,6 @@ export const GameBannerContainer = styled.div`
   }
   &:hover ${GameTextOverlay} {
     display: block;
-    opacity: 1;
   }
 `;
 

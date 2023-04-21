@@ -6,18 +6,18 @@ import { BsReddit } from "react-icons/bs";
 import Loading from "../../components/Loading";
 import {
   Container,
-  Title,
   DescriptionContainer,
   GameImageContainer,
   GameImage,
   GameDescriptionContainer,
-  GameTitle,
   GameInfo,
   Released,
   CriticScore,
   GameWebsite,
   GameReddit,
 } from "./styled";
+
+import { TitleMessage } from "../../components/Title/style";
 
 function GameDescription() {
   const [game, setGame] = useState([]);
@@ -48,13 +48,13 @@ function GameDescription() {
 
   return (
     <Container>
-      <Title>Informações sobre o jogo</Title>
+      <TitleMessage margin="30px 0" textTransform="uppercase">Descrição do jogo</TitleMessage>
       <DescriptionContainer>
         <GameImageContainer>
           <GameImage src={game.background_image} alt={game.slug} />
         </GameImageContainer>
         <GameDescriptionContainer>
-          <GameTitle>{game.name}</GameTitle>
+          <TitleMessage size="2.3rem" align="left" margin="20px 0 0 0" padding="0">{game.name}</TitleMessage>
           <GameInfo>{game.description_raw}</GameInfo>
           <Released>Released: {game.released}</Released>
           <CriticScore>Rating: {game.rating}</CriticScore>

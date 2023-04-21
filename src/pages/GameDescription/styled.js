@@ -8,13 +8,6 @@ background-color: #162f44;
   align-items: center;
 `;
 
-export const Title = styled.h2`
-  text-align: center;
-  color: #fff;
-  font-size: 36px;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-`;
 
 export const DescriptionContainer = styled.div`
   width: 100%;
@@ -34,14 +27,14 @@ export const DescriptionContainer = styled.div`
 
 export const GameImageContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 400px;
   position: relative;
 `;
 
 export const GameImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   position: absolute;
   top: 0;
   left: 0;
@@ -53,21 +46,12 @@ export const GameDescriptionContainer = styled.div`
   padding: 0 25px 50px 25px;
   display: flex;
   flex-direction: column;
-`;
-
-export const GameTitle = styled.h2`
-  font-size: 36px;
-  text-transform: capitalize;
-  color: #222;
-  background-image: linear-gradient(to right, #2b6cff, #77d9ffd1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  gap: 20px;
 `;
 
 export const GameInfo = styled.p`
   font-size: 18px;
   line-height: 1.5;
-  color: #555;
   color: #fff;
 `;
 
@@ -90,7 +74,6 @@ export const GameWebsite = styled.a`
   font-size: 18px;
   display: flex;
   align-items: center;
-  margin: 15px 0 20px 0;
   transition:  0.3s ease-in-out;
 
   &:hover {
@@ -106,7 +89,7 @@ export const GameReddit = styled.a`
   border-radius: 5px;
   font-size: 18px;
   display: flex;
-  align-items: center
+  align-items: center;
   transition:  0.3s ease-in-out;
 
   &:hover {

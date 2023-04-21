@@ -2,8 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from 'react-icons/md';
 import './style.js';
 import { Link } from "react-router-dom";
-import { Title, Container, NoGameContainer, NoGameMessage, BtnGames, GameContainer, GameImage, GameInfo, GameName, GameInfoBtn, DeleteGameBtn } from './style';
+import { Container, NoGameContainer, NoGameMessage, BtnGames, GameContainer, GameImage, GameInfo, GameName, GameInfoBtn, DeleteGameBtn } from './style';
 
+import { TitleMessage } from "../../components/Title/style.js";
 export default function WishList() {
     const dispatch = useDispatch();
     const games = useSelector(state => state.wishlist);
@@ -17,7 +18,7 @@ export default function WishList() {
 
     return (
         <>
-          <Title>Lista de desejos</Title>
+          <TitleMessage textTransform="uppercase">Lista de desejos</TitleMessage>
           {games.length === 0 ? (
             <NoGameContainer>
                 <NoGameMessage>Sua lista de desejo está vazia :/</NoGameMessage>
@@ -37,7 +38,7 @@ export default function WishList() {
                         type="button"
                         onClick={() => handleRemove(game.id)}
                       >
-                        <MdDelete size={20} color="red" />
+                        <MdDelete size={26} color="red" />
                       </DeleteGameBtn>
                     </GameInfo>
                   </GameContainer>

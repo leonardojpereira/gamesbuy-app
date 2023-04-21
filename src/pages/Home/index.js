@@ -6,9 +6,10 @@ import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 
+import Title from '../../components/Title';
+
 import {
   HomeContainer,
-  Title,
   SearchForm,
   SearchInput,
   Box,

@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-font-family: 'Helvetica Neue', sans-serif;
-font-size: 3rem;
-font-weight: bold;
-color: #fff;
-text-align: center;
-background-image: linear-gradient(to right, #2b6cff, #77d9ffd1);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-padding: 1rem;
-text-transform: uppercase;
-`;
-
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -87,13 +74,18 @@ export const GameInfoBtn = styled.button`
   font-size: 18px;
   border-radius: 12px;
   cursor: pointer;
+  transition: ease 0.4s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const DeleteGameBtn = styled.button`
-  border: 0;
+  border: none;
   background: none;
   position: absolute;
   bottom: 6px;
-  right: 6px;
+  right: 10px;
   cursor: pointer;
 `;
