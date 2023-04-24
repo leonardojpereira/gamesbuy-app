@@ -20,22 +20,22 @@ export const NoGameMessage = styled.span`
   font-size: 28px;
 `;
 
+
+export const GameName = styled.strong`
+  color: #fff;
+  font-size: 24px;
+`;
+
 export const BtnGames = styled.button`
 background: #38b6ff;
 color: #fff;
 border: none;
-padding: 10px 36px;
+padding: 8px 28px;
 font-size: 18px;
 border-radius: 12px;
 cursor: pointer;
 `;
 
-
-export const GameName = styled.strong`
-  color: #fff;
-  margin-top: 4rem;
-  font-size: 26px;
-`;
 
 export const GameContainer = styled.div`
   margin-bottom: 40px;
@@ -44,25 +44,26 @@ export const GameContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
+  max-height: 150px;
   background-color: #001622;
   border-radius: 8px;
-  max-height: 250px;
 `;
 
 export const GameImage = styled.img`
   height: 100%;
-  width: 50%;
+  width: 40%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 `;
 
 export const GameInfo = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  gap: 42px;
+  width: 60%;
+  gap: 18px;
   position: relative;
 `;
 
@@ -70,9 +71,9 @@ export const GameInfoBtn = styled.button`
   background: #162f44;
   color: #fff;
   border: none;
-  padding: 12px 42px;
-  font-size: 18px;
-  border-radius: 12px;
+  padding: 8px 32px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: ease 0.4s;
 

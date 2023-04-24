@@ -38,7 +38,7 @@ export default function WishList() {
                         type="button"
                         onClick={() => handleRemove(game.id)}
                       >
-                        <MdDelete size={26} color="red" />
+                        <MdDelete size={24} color="red" />
                       </DeleteGameBtn>
                     </GameInfo>
                   </GameContainer>
