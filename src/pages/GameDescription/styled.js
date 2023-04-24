@@ -13,7 +13,6 @@ export const DescriptionContainer = styled.div`
   width: 100%;
   max-width: 900px;
   background-color: #001622;
- 
   border-radius: 10px;
   margin-bottom: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -27,7 +26,7 @@ export const DescriptionContainer = styled.div`
 
 export const GameImageContainer = styled.div`
   width: 100%;
-  height: 400px;
+  height: 350px;
   position: relative;
 `;
 

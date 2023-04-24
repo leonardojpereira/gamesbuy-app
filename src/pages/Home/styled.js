@@ -38,6 +38,7 @@ export const NoGamesMessage = styled.div`
 export const GameContainer = styled.li`
   margin: 10px;
   max-width: 500px;
+  max-height: 300px;
   list-style: none;
   text-decoration: none;
   position: relative;
@@ -47,6 +48,7 @@ export const GameBanner = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   z-index: 1;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;

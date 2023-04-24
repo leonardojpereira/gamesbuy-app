@@ -11,5 +11,9 @@ export const TitleMessage = styled.h1`
     -webkit-text-fill-color: transparent;
     padding: ${props => props.padding || '1rem'};
     margin: ${props => props.margin || '24px 0'};
-    text-transform: ${props => props.textTransform || 'none'};;
+    text-transform: ${props => props.textTransform || 'none'};
+
+    @media (max-width: 768px) {
+      font-size: ${props => props.size || '2rem'};
+    }
 `;

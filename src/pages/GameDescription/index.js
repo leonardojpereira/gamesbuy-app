@@ -48,7 +48,7 @@ function GameDescription() {
 
   return (
     <Container>
-      <TitleMessage margin="30px 0" textTransform="uppercase">Descrição do jogo</TitleMessage>
+      <TitleMessage margin="30px 0">Descrição do jogo</TitleMessage>
       <DescriptionContainer>
         <GameImageContainer>
           <GameImage src={game.background_image} alt={game.slug} />
