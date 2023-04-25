@@ -82,6 +82,7 @@ export const GameTextOverlay = styled.span`
   text-align: center;
   z-index: 1;
   display: none;
+  opacity: 0.8;
   cursor: pointer;
 `;
 

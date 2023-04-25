@@ -50,25 +50,15 @@ export default function Home() {
   }, [games]);
 
   useEffect(() => {
-    const filtered = games.filter((game) => {
-      return game.name.toLowerCase().includes(searchGame.toLowerCase());
-    });
+    const filtered = games.filter(game => game.name.toLowerCase().includes(searchGame.toLowerCase()));
     setFilteredGames(filtered);
   }, [searchGame, games]);
 
   const handleWishlistClick = (game) => {
-    const gameIndex = wishlist.findIndex((item) => item.id === game.id);
-    if (gameIndex !== -1) {
-      dispatch({
-        type: "REMOVE_GAME_FROM_WISHLIST",
-        id: game.id,
-      });
-    } else {
-      dispatch({
-        type: "ADD_GAME_TO_WISHLIST",
-        game,
-      });
-    }
+    const gameIndex = wishlist.findIndex(item => item.id === game.id);
+    gameIndex !== -1
+      ? dispatch({ type: "REMOVE_GAME_FROM_WISHLIST", id: game.id })
+      : dispatch({ type: "ADD_GAME_TO_WISHLIST", game });
   };
 
   if (!loading) {
@@ -95,10 +85,10 @@ export default function Home() {
           filteredGames.map((game) => (
             <GameContainer key={game.id}>
               <Link to={`/description/${game.id}`} style={{ textDecoration: "none" }}>
-              <GameBannerContainer>
-              <GameBanner src={game.background_image} alt={game.name} />
-              <GameTextOverlay>Ver descrição</GameTextOverlay>
-              </GameBannerContainer>
+                <GameBannerContainer>
+                  <GameBanner src={game.background_image} alt={game.name} />
+                  <GameTextOverlay>Saiba mais</GameTextOverlay>
+                </GameBannerContainer>
               </Link>
               <GameInfoContainer>
                 <Link
@@ -119,7 +109,7 @@ export default function Home() {
           ))
         )}
       </Box>
-      <BackUpArrow/>
+      <BackUpArrow />
     </HomeContainer>
   );
 }
