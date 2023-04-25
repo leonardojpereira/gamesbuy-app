@@ -10,9 +10,12 @@ export const Arrow = styled.a`
     font-size: 32px;  
     text-align: center; 
     transition: ease 0.4s;
+    z-index: 2;
+
     &:hover {
         transform: scale(1.1);
     }
+    
     @media screen and (max-width: 900px) {
         display: none;
     }
