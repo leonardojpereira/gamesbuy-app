@@ -48,13 +48,13 @@ function GameDescription() {
 
   return (
     <Container>
-      <TitleMessage margin="30px 0">Descrição do jogo</TitleMessage>
+      <TitleMessage padding="0" mobileSize="2rem" size="3rem" margin="30px 0">Descrição do jogo</TitleMessage>
       <DescriptionContainer>
         <GameImageContainer>
           <GameImage src={game.background_image} alt={game.slug} />
         </GameImageContainer>
         <GameDescriptionContainer>
-          <TitleMessage size="2.3rem" align="left" margin="20px 0 0 0" padding="0">{game.name}</TitleMessage>
+          <TitleMessage size="1.7rem" align="left" margin="20px 0 0 0" padding="0">{game.name}</TitleMessage>
           <GameInfo>{game.description_raw}</GameInfo>
           <Released>Released: {game.released}</Released>
           <CriticScore>Rating: {game.rating}</CriticScore>

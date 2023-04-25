@@ -6,7 +6,8 @@ import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 
-import Title from '../../components/Title';
+import { TitleMessage } from "../../components/Title/style";
+import BackUpArrow from "../../components/BackToTopArrow";
 
 import {
   HomeContainer,
@@ -76,7 +77,7 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <Title>Seu guia completo de jogos e informações detalhadas!</Title>
+      <TitleMessage padding="0" mobileSize="2rem">Seu guia completo de jogos e informações detalhadas!</TitleMessage>
       <SearchForm>
         <SearchInput
           type="search"
@@ -118,6 +119,7 @@ export default function Home() {
           ))
         )}
       </Box>
+      <BackUpArrow/>
     </HomeContainer>
   );
 }

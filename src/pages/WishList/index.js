@@ -1,14 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
+import { BsEmojiFrownFill } from 'react-icons/bs'
 import { toast } from "react-toastify";
 import "./style.js";
 import { Link } from "react-router-dom";
 import {
   Container,
+  GameContainer,
   NoGameContainer,
   NoGameMessage,
   BtnGames,
-  GameContainer,
+  Box,
   GameImage,
   GameInfo,
   GameName,
@@ -30,19 +32,19 @@ export default function WishList() {
   }
 
   return (
-    <>
-      <TitleMessage>Lista de desejos</TitleMessage>
+    <Container>
+      <TitleMessage margin="42px 16px" padding="0" size="3rem" mobileSize="2.5rem">Lista de desejos</TitleMessage>
       {games.length === 0 ? (
         <NoGameContainer>
-          <NoGameMessage>Sua lista de desejo está vazia :/</NoGameMessage>
+          <NoGameMessage>Sua lista de desejos está vazia <BsEmojiFrownFill color="yellow"/></NoGameMessage>
           <Link to="/">
             <BtnGames>Ver jogos</BtnGames>
           </Link>
         </NoGameContainer>
       ) : (
         games.map((game) => (
-          <Container key={game.id}>
-            <GameContainer key={game.id}>
+          <GameContainer>
+            <Box key={game.id}>
               <GameImage src={game.background_image} alt={game.slug} />
               <GameInfo>
                 <GameName>{game.name}</GameName>
@@ -56,10 +58,10 @@ export default function WishList() {
                   <MdDelete color="red" />
                 </DeleteGameBtn>
               </GameInfo>
-            </GameContainer>
-          </Container>
+            </Box>
+          </GameContainer>
         ))
       )}
-    </>
+   </Container>
   );
 }

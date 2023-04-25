@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
      text-align: center;
+     margin: 0 60px;
+     padding-bottom: 180px;
+
+     @media screen and (max-width: 900px) {
+        margin: 0 22px;
+    }
 `;
 
 
@@ -42,6 +48,10 @@ export const GameContainer = styled.li`
   list-style: none;
   text-decoration: none;
   position: relative;
+
+  @media screen and (max-width: 380px) {
+      height: 300px;
+    }
 `;
 
 export const GameBanner = styled.img`
@@ -104,6 +114,10 @@ export const GameName = styled.span`
     color: #FFF;
     text-transform: capitalize;
     width: 100%;
+
+    @media screen and (max-width: 380px) {
+      font-size: 16px;
+    }
 `;
 
 export const WishListBtn = styled.span`
@@ -114,4 +128,8 @@ export const WishListBtn = styled.span`
     font-size: 22px;
     color: yellow;
     cursor: pointer;
+
+    @media screen and (max-width: 380px) {
+      font-size: 20px;
+    }
 `;

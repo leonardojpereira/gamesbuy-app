@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import WishList from './pages/WishList';
 import GameDescription from './pages/GameDescription';
 import Error from './pages/Error';
+import Footer from './components/Footer';
 
 export default function RoutesApp() {
     return (
@@ -17,6 +18,7 @@ export default function RoutesApp() {
 
                 <Route path="*" element={<Error/>}/>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     )
 }

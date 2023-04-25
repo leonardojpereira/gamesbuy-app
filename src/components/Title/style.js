@@ -16,4 +16,8 @@ export const TitleMessage = styled.h1`
     @media (max-width: 768px) {
       font-size: ${props => props.size || '2rem'};
     }
+
+    @media screen and (max-width: 500px) {
+      font-size: ${props => props.mobileSize || '1.5rem'}
+    }
 `;

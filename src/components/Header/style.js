@@ -2,16 +2,18 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   display: flex;
+  height: 135px;
   padding: 0 22px;
   justify-content: space-between;
   align-items: center;
   background: #001622;
   border-bottom: #38b6ff solid 2px;
+  width: 100%;
 `;
 
 export const LogoContainer = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 `;
 
 export const LogoImage = styled.img`
@@ -58,6 +60,6 @@ export const Counter = styled.span`
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 48px;
-  right: 48px;
+  top: 40px;
+  right: 47px;
 `;

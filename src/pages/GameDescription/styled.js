@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 background-color: #162f44;
-  padding: 0px 50px;
+  padding: 0px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 180px;
 `;
 
 
@@ -28,12 +29,17 @@ export const GameImageContainer = styled.div`
   width: 100%;
   height: 350px;
   position: relative;
+
+  @media (max-width: 500px) {
+    height: 200px;
+  }
 `;
 
 export const GameImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: top;
   position: absolute;
   top: 0;
   left: 0;
@@ -49,6 +55,7 @@ export const GameDescriptionContainer = styled.div`
 `;
 
 export const GameInfo = styled.p`
+  text-align: justify;
   font-size: 18px;
   line-height: 1.5;
   color: #fff;
@@ -67,7 +74,8 @@ export const CriticScore = styled.p`
 export const GameWebsite = styled.a`
   text-decoration: none;
   color: #fff;
-  background-color: #2b6cff;
+  background-color: rgb(0 61 199);
+
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 18px;
@@ -76,7 +84,7 @@ export const GameWebsite = styled.a`
   transition:  0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.6;
+    background-color: rgb(46 93 199);
   }
 `;
 
@@ -92,6 +100,6 @@ export const GameReddit = styled.a`
   transition:  0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.6;
+    background-color: rgb(255 105 49);
   }
 `;
