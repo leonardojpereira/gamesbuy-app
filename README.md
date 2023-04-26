@@ -74,6 +74,5 @@ https://react-icons.github.io/react-icons/
 
    
 <div style="align="center">
-     ⌨️ with ❤️ by [Leonardo Barbosa](https://github.com/leonardojpereira) 😊
-</div>
-
+  ⌨️ with ❤️ by [Leonardo Barbosa](https://github.com/leonardojpereira) 😊
+ </div>
