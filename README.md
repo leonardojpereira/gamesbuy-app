@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+![print_infogames](https://user-images.githubusercontent.com/87662269/234714598-93b8bb7a-c42b-4112-b918-912ac320a763.JPG)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<h1 align="center">
+ INFOGAMES APP :video_game:
+</h1>
 
-In the project directory, you can run:
+<h2>
+  :pencil: Descrição do projeto
+</h2>
 
-### `npm start`
+<p>
+Este projeto é um site de informações de jogos criado em ReactJS utilizando styled-components para estilização. A sua principal funcionalidade é exibir informações sobre jogos, como título, imagem, descrição e avaliação. Para obter as informações dos jogos, foi utilizada a API da RAWG para fazer as requisições necessárias.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O objetivo principal deste projeto é colocar em prática os conceitos do Redux, que é uma biblioteca de gerenciamento de estado para aplicações JavaScript. Além disso, o projeto também utiliza outras dependências como react-icons, react-toastify, react-router-dom, axios e outras.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A responsividade também foi uma preocupação ao desenvolver este projeto, de forma que ele possa ser facilmente acessado em dispositivos móveis, tablets e desktops. Em resumo, este site de informações de jogos é uma demonstração prática de como utilizar o ReactJS e suas ferramentas para criar uma aplicação moderna e responsiva.
+ 
+### RAWG API
+ 
+```
+https://api.rawg.io/api/games
+```  
+</p>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## ↗️ Como inicializar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>
+ 
+### 1. Para inicializar o projeto, você deve copiar a URL do projeto e, utilizando o git, inserir o seguinte comando:
+ 
+```
+git clone https://github.com/leonardojpereira/infogames-app
+```
+  
+### 2. Após essa etapa, entre no diretório do projeto dentro do git e insira o seguinte comando:
+  
+```
+npm install
+```  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Isso serve para adicionar todas as dependências do projeto, como o node_modules e as dependêcias citadas acima.
+  
+### 3. Após a instalação, basta digitar:
+  
+```
+npm start
+```    
+  
+Proto, o projeto estará funcionando!  
+ 
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :link: Deploy
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Você também pode acessar o projeto através do seguinte link:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+https://infogamesapp.netlify.app/
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 🛠️ Feito com
+* [Visual Studio Code](https://code.visualstudio.com) - Coding Editor
+ 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Imagem / Icones
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://react-icons.github.io/react-icons/
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   
+   
+<div align="center">
+  ⌨️ with ❤️ by Leonardo Barbosa 😊
+<div>
