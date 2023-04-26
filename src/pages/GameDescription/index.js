@@ -4,6 +4,7 @@ import api from "../../services/api";
 import { FaGlobe } from "react-icons/fa";
 import { BsReddit } from "react-icons/bs";
 import Loading from "../../components/Loading";
+import { format } from 'date-fns';
 import {
   Container,
   DescriptionContainer,
@@ -12,7 +13,8 @@ import {
   GameDescriptionContainer,
   GameInfo,
   Released,
-  CriticScore,
+  CriticScoreContainer,
+  Score,
   GameWebsite,
   GameReddit,
 } from "./styled";
@@ -48,16 +50,21 @@ function GameDescription() {
 
   return (
     <Container>
-      <TitleMessage padding="0" mobileSize="2rem" size="3rem" margin="30px 0">Descrição do jogo</TitleMessage>
+      <TitleMessage padding="0" mobileSize="2rem" size="3rem">Descrição do jogo</TitleMessage>
       <DescriptionContainer>
         <GameImageContainer>
           <GameImage src={game.background_image} alt={game.slug} />
         </GameImageContainer>
         <GameDescriptionContainer>
-          <TitleMessage size="1.7rem" align="left" margin="20px 0 0 0" padding="0">{game.name}</TitleMessage>
+          <TitleMessage textTransform="none" fontFamily="Roboto" size="1.7rem" align="left" margin="20px 0 0 0" padding="0">{game.name}</TitleMessage>
           <GameInfo>{game.description_raw}</GameInfo>
-          <Released>Released: {game.released}</Released>
-          <CriticScore>Rating: {game.rating}</CriticScore>
+          <Released>Released: {format(new Date(game.released), 'dd/MM/yyyy')}</Released>
+          <CriticScoreContainer>
+            Rating:{' '}
+            <Score style={{ color: game.rating > 4 ? 'green' : 'red' }}>
+              {game.rating}
+            </Score>
+          </CriticScoreContainer>
           <GameWebsite target="blank" href={game.website}>
             Website <FaGlobe size={18} style={{ marginLeft: "6px" }} />
           </GameWebsite>

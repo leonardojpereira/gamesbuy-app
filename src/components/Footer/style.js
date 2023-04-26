@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export const FooterWrapper = styled.footer`
-  background-color: rgb(0, 22, 34);
+  background-color: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,6 @@ export const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 24px 0;
-  border-top: 2px solid rgb(56, 182, 255);
   position: absolute;
   bottom: 0;
   width: 100%;

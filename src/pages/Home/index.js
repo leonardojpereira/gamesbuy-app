@@ -22,7 +22,7 @@ import {
   GameInfoContainer,
   GameName,
   WishListBtn,
-} from "./styled";
+} from "./style";
 
 export default function Home() {
   const dispatch = useDispatch();

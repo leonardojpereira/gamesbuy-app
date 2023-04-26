@@ -36,7 +36,7 @@ export default function WishList() {
       <TitleMessage margin="42px 16px" padding="0" size="3rem" mobileSize="2.5rem">Lista de desejos</TitleMessage>
       {games.length === 0 ? (
         <NoGameContainer>
-          <NoGameMessage>Sua lista de desejos está vazia <BsEmojiFrownFill color="yellow"/></NoGameMessage>
+          <NoGameMessage>Sua lista de desejos está vazia <BsEmojiFrownFill color="yellow" /></NoGameMessage>
           <Link to="/">
             <BtnGames>Ver jogos</BtnGames>
           </Link>
@@ -62,6 +62,6 @@ export default function WishList() {
           </GameContainer>
         ))
       )}
-   </Container>
+    </Container>
   );
 }

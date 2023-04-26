@@ -1,7 +1,7 @@
 import { TitleMessage } from "./style";
 
 export default function Title({ children }) {
-    return(
+    return (
         <TitleMessage>{children}</TitleMessage>
     );
 }

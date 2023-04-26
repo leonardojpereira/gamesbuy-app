@@ -29,7 +29,7 @@ export default function Header() {
           <Link to="/wishlist" style={{ textDecoration: "none" }}>
             <ItemList>
               <WishListIcon>
-                <RiFileList3Fill size={44} color="yellow"/>
+                <RiFileList3Fill size={44} color="yellow" />
               </WishListIcon>
               <Counter>{wishListAmount}</Counter>
             </ItemList>

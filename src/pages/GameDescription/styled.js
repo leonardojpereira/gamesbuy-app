@@ -64,11 +64,15 @@ export const GameInfo = styled.p`
 export const Released = styled.p`
   font-size: 18px;
   color: #fff;
+
 `;
 
-export const CriticScore = styled.p`
+export const CriticScoreContainer = styled.div`
   font-size: 18px;
   color: #fff;
+`;
+
+export const Score = styled.span`
 `;
 
 export const GameWebsite = styled.a`
