@@ -2,7 +2,7 @@
 
 
 <h1 align="center">
- INFOGAMES APP :controller:
+ INFOGAMES APP :video_game:
 </h1>
 
 <h2>
@@ -73,6 +73,6 @@ https://infogamesapp.netlify.app/
 https://react-icons.github.io/react-icons/
 
    
-<div style="align="center">
+<div align="center">
   ⌨️ with ❤️ by [Leonardo Barbosa](https://github.com/leonardojpereira) 😊
- </div>
+<div>
